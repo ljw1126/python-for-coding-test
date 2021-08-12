@@ -187,11 +187,173 @@ print(result)
 
 """
 
+# BFS 
+from collections import deque 
+
+# N x M 
+n,m = map(int, input().split())
+
+# 그래프 생성 
+graph = []
+for i in range(n):
+    graph.append(list(map(int,input())))
+
+# 방문여부 선언 visited = [[False] * m for i in range(n)] 
+
+# 상좌하우 탐색( 백터 값 )
+dx = [-1,0,1,0]
+dy = [0,-1,0,1]
 
 
+def bfs(x,y):
+    # 현재 위치를 큐에 집어 넣음 
+    q = deque()
+    q.append((x,y))
+
+    # 만약 현재 위치가 1이라면 아이스크림을 만들 수 없는 공간이거나 이미 탐색한 경우
+    if graph[x][y] == 1 :
+        return False 
+
+    # 현재 위치 기준으로 BFS 탐색 -
+    while q : 
+        print(f" while 문 q >> {q}")
+        x,y = q.popleft()
+        print(f" x,y >> {x},{y}")
+        # 현재 위치 값을 0에서 1로 변경 
+        graph[x][y] = 1
+        # 상좌우하 탐색 
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            print(f" nx,ny >> {nx},{ny}")
+            # 얼음 틀 범위에서 벗어나지 않고, 그 위치값이 0인 경우에만 queue에 넣음 
+            if 0 <= nx < n and 0 <= ny < m and graph[nx][ny] == 0:
+                q.append((nx,ny))
+    # 하나의 아이스크림이 만들어지는 공간을 모두 탐색한 경우 True 
+    return True 
+
+result = 0 
+
+for i in range(n):
+    for j in range(m):
+        if bfs(i,j) == True:
+            result += 1 
 
 
+print(result)
 
+
+"""
+# 입력 
+4 5
+00110
+00011
+11111
+00000
+
+# bfs 
+ q >> deque([(0, 0)])
+    while 문 q >> deque([(0, 0)])
+    x,y >> 0,0
+        nx,ny >> -1,0
+        nx,ny >> 0,-1
+        nx,ny >> 1,0
+        nx,ny >> 0,1
+    while 문 q >> deque([(1, 0), (0, 1)])
+    x,y >> 1,0
+        nx,ny >> 0,0
+        nx,ny >> 1,-1
+        nx,ny >> 2,0
+        nx,ny >> 1,1
+    while 문 q >> deque([(0, 1), (1, 1)])
+    x,y >> 0,1
+        nx,ny >> -1,1
+        nx,ny >> 0,0
+        nx,ny >> 1,1
+        nx,ny >> 0,2
+    while 문 q >> deque([(1, 1), (1, 1)])
+    x,y >> 1,1
+        nx,ny >> 0,1
+        nx,ny >> 1,0
+        nx,ny >> 2,1
+        nx,ny >> 1,2
+    while 문 q >> deque([(1, 1), (1, 2)])
+    x,y >> 1,1
+        nx,ny >> 0,1
+        nx,ny >> 1,0
+        nx,ny >> 2,1
+        nx,ny >> 1,2
+    while 문 q >> deque([(1, 2), (1, 2)])
+    x,y >> 1,2
+        nx,ny >> 0,2
+        nx,ny >> 1,1
+        nx,ny >> 2,2
+        nx,ny >> 1,3
+    while 문 q >> deque([(1, 2)])
+    x,y >> 1,2
+        nx,ny >> 0,2
+        nx,ny >> 1,1
+        nx,ny >> 2,2
+        nx,ny >> 1,3
+ q >> deque([(0, 1)])
+ q >> deque([(0, 2)])
+ q >> deque([(0, 3)])
+ q >> deque([(0, 4)])
+    while 문 q >> deque([(0, 4)])
+    x,y >> 0,4
+        nx,ny >> -1,4
+        nx,ny >> 0,3
+        nx,ny >> 1,4
+        nx,ny >> 0,5
+ q >> deque([(1, 0)])
+ q >> deque([(1, 1)])
+ q >> deque([(1, 2)])
+ q >> deque([(1, 3)])
+ q >> deque([(1, 4)])
+ q >> deque([(2, 0)])
+ q >> deque([(2, 1)])
+ q >> deque([(2, 2)])
+ q >> deque([(2, 3)])
+ q >> deque([(2, 4)])
+ q >> deque([(3, 0)])
+ while 문 q >> deque([(3, 0)])
+    x,y >> 3,0
+    nx,ny >> 2,0
+    nx,ny >> 3,-1
+    nx,ny >> 4,0
+    nx,ny >> 3,1
+ while 문 q >> deque([(3, 1)])
+    x,y >> 3,1
+    nx,ny >> 2,1
+    nx,ny >> 3,0
+    nx,ny >> 4,1
+    nx,ny >> 3,2
+ while 문 q >> deque([(3, 2)])
+    x,y >> 3,2
+    nx,ny >> 2,2
+    nx,ny >> 3,1
+    nx,ny >> 4,2
+    nx,ny >> 3,3
+ while 문 q >> deque([(3, 3)])
+    x,y >> 3,3
+    nx,ny >> 2,3
+    nx,ny >> 3,2
+    nx,ny >> 4,3
+    nx,ny >> 3,4
+ while 문 q >> deque([(3, 4)])
+    x,y >> 3,4
+    nx,ny >> 2,4
+    nx,ny >> 3,3
+    nx,ny >> 4,4
+    nx,ny >> 3,5
+ q >> deque([(3, 1)])
+ q >> deque([(3, 2)])
+ q >> deque([(3, 3)])
+ q >> deque([(3, 4)])
+3
+
+
+"""
 
 
 

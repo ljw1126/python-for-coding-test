@@ -1,0 +1,35 @@
+1. Scanner 입력 받기 
+Scanner sc = new Scanner(System.in);
+
+int n = sc.nextInt();
+sc.nextLine();    // nextInt()사용시 끝에 \n 붙는다고 초기화 필요한 듯 
+
+ String[] plans = sc.nextLine().split(" ");      // R R R R R > [R,R,R,R,R]
+
+2. 아스키 코드 관련 
+ ※ 아스키 코드 표 링크 >> https://blog.naver.com/PostView.nhn?blogId=jysaa5&logNo=221831226674
+ ※ 0-9 아스키 코드 범위 : 48 ~ 57 , A-Z 아스키 코드 범위 : 65~90 , a-z 아스키 코드 범위 : 97~122  
+
+
+ int row = inputData.charAt(1) - '0';  // 1 >> 아스키 49 , 0 >> 아스키 48 그래서 빼면 1 구해짐  
+ int col = inputData.charAt(0) - 'a' + 1;   // a >> 65 인데 a일때 a를 빼고 1씩 더해주면 a,b,c = 1,2,3 됨 
+
+3. ArrayList 정렬하기 
+ https://hianna.tistory.com/569
+
+
+4. java Scanner 클래스 
+ https://deftkang.tistory.com/55
+
+5. 배열 입력값 확인
+
+        //System.out.print("graph>>"+Arrays.toString(graph)); // 주소값 출력됨 
+        // System.out.print("graph>>"+Arrays.toString(graph[0]));
+        // System.out.print("graph>>"+Arrays.toString(graph[1]));
+        // System.out.print("graph>>"+Arrays.toString(graph[2]));
+        // System.out.print("graph>>"+Arrays.toString(graph[3]));
+        // System.out.print("graph>>"+Arrays.deepToString(graph)); // 2차원 배열 결과 확인
+6. java 에서 객체의 특정값 기준 정렬하기 (Comparable)
+   https://www.daleseo.com/java-comparable-comparator/
+
+ 

@@ -32,4 +32,5 @@ sc.nextLine();    // nextInt()사용시 끝에 \n 붙는다고 초기화 필요�
 6. java 에서 객체의 특정값 기준 정렬하기 (Comparable)
    https://www.daleseo.com/java-comparable-comparator/
 
- 
+7. int[] 배열 정렬 
+https://codechacha.com/ko/java-sorting-array/ 

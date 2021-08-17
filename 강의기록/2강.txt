@@ -57,3 +57,15 @@ O(2^n) 지수 시간                 --------- 나쁨
   print("time:", end_time - start_time) #수행 시간 출력 
 
   ```
+
+  ※ 파이썬 input() 대신  sys.stdin.readline() 사용하기 ! 
+  import sys 
+
+  n = int(sys.stdin.readline())
+  array = []
+
+  for _ in range(n):
+      array.append(list(map(int, sys.stdin.readline().split())))
+
+  for i in array:
+      print(i[0] + i[1])

@@ -96,9 +96,18 @@ print("||_/=\\\\__|")
 2588 곱셈 
 // 이게 정답일가?
 """
+# n = int(input())
+# m = input()
+# print(n * int(m[2]))
+# print(n * int(m[1]))
+# print(n * int(m[0]))
+# print(n * int(m))
+
+# 문자열 공부후 다시 했을때 
 n = int(input())
 m = input()
-print(n * int(m[2]))
-print(n * int(m[1]))
-print(n * int(m[0]))
-print(n* int(m))
+
+for i in m[::-1]:
+    print(n * int(i))
+
+print(n * int(m))

@@ -17,7 +17,6 @@ N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하�
 # for i in range(1,10):
 #     print(f"{n} * {i} = {n*i}")
 
-
 """
 10950번 A+B - 3 // 
 
@@ -167,9 +166,9 @@ https://velog.io/@yeseolee/Python-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%A0%A5
 # for i in range(len(array)):
 #     print(f"Case #{i+1}: {array[i][0]+array[i][1]}")
 
-# t = int(input())
+# n = int(input())
 
-# for i in range(1,t+1):
+# for i in range(1,n+1):
 #     a,b = map(int, input().split())
 #     print(f"Case #{i}: {a+b}")
 
@@ -249,11 +248,11 @@ https://velog.io/@yeseolee/Python-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%A0%A5
 X보다 작은 수를 입력받은 순서대로 공백으로 구분해 출력한다. X보다 작은 수는 적어도 하나 존재한다.
 """
 # 내가 작성한 소스 
-# n,x = map(int, input().split())
-# array = input().split(" ")
+n,x = map(int, input().split())
+array = input().split(" ")
 
-# for i in range(n):
-#     if x > int(array[i]) : print(f"{array[i]}",end=" ")
+for i in range(n):
+    if x > int(array[i]) : print(f"{array[i]}",end=" ")
 
 # 다른 사람 
 N, X = map(int, input().split())

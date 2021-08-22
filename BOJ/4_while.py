@@ -58,22 +58,22 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
 8 + 4 = 12
 42  // 새로운 수 
 4 + 2 = 6
-26  // 새로운 종료 
+26  // 종료 
 # 사이클 길이 출력 
 4
 """
 
 # https://wook-2124.tistory.com/222
 # 1.int 형으로 푸는 방법
-N = int(input())
+N = int(input())     # 26인 경우 
 num = N
 cnt = 0
 while True :
     try :
-        a = num // 10  # 6  , 몫연산 
-        b = num % 10   # 8  , 나머지 연산
-        c = (a+b) % 10  # 14 에서 '4'
-        num = (b * 10) + c 
+        a = num // 10  # 2  , 몫연산 
+        b = num % 10   # 6  , 나머지 연산
+        c = (a+b) % 10  # 68 에서 8
+        num = (b * 10) + c   # 68
         cnt += 1
         if N == num : break 
     except: 

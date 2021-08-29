@@ -24,4 +24,12 @@ for i in range(10):
 ### int를 list에 담을 떄 
 ```
  array = list(map(int,str(i)))
+ 또는 
+ n = list(map(int,str(sys.stdin.readline().strip())))
+ print(n)
+ # 내포 표기 생성
+ nums = input() # str이니깐 밑에 for문 으로 해서 넣을 수 있지  
+ nums = [int(n)  for n in nums]
+ # [2,3,1,4]
+ ordered_nums = sorted(nums, reverse=True)
 ```

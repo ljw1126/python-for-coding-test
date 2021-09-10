@@ -276,19 +276,184 @@ S의 최솟값을 출력하는 프로그램을 작성하시오.
 파이썬 공식문서
 https://docs.python.org/ko/3/tutorial/datastructures.html
 """
-import sys 
+# import sys 
 
+# N = int(sys.stdin.readline())
+
+# # 최대값에 a의 최소값이 차례대로 맵핑되도록 {1, 1, 0, 1, 6} 으로 만들어야 함 
+# a = list(map(int,sys.stdin.readline().split())) # 오름차순 정렬  
+# b = list(map(int,sys.stdin.readline().split()))
+# result = 0 
+
+# for _ in range(N):
+#     result += max(b) * min(a)
+#     b.pop(b.index(max(b)))       # 너무 어렵게 생각했다.
+#     a.pop(a.index(min(a)))
+
+# print(result)  
+
+"""
+2693번 N번째 큰 수 ----------- 아주 쉬움
+문제
+배열 A가 주어졌을 때, N번째 큰 값을 출력하는 프로그램을 작성하시오.
+
+배열 A의 크기는 항상 10이고, 자연수만 가지고 있다. N은 항상 3이다.
+
+입력
+첫째 줄에 테스트 케이스의 개수 T(1 <= T <= 1,000)가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, 배열 A의 원소 10개가 공백으로 구분되어 주어진다. 이 원소는 1보다 크거나 같고, 1,000보다 작거나 같은 자연수이다.
+
+출력
+각 테스트 케이스에 대해 한 줄에 하나씩 배열 A에서 3번째 큰 값을 출력한다.
+"""
+
+# import sys 
+
+# N = int(sys.stdin.readline())
+
+# for _ in range(N):
+#     array = sorted(list(map(int,sys.stdin.readline().split())), reverse= True)
+#     print(array[2])
+
+"""
+10814번 나이순 정렬
+나이순 정렬
+시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
+3 초	256 MB	52964	22555	17099	41.901%
+문제
+온라인 저지에 가입한 사람들의 나이와 이름이 가입한 순서대로 주어진다. 이때, 회원들을 나이가 증가하는 순으로, 나이가 같으면 먼저 가입한 사람이 앞에 오는 순서로 정렬하는 프로그램을 작성하시오.
+
+입력
+첫째 줄에 온라인 저지 회원의 수 N이 주어진다. (1 ≤ N ≤ 100,000)
+
+둘째 줄부터 N개의 줄에는 각 회원의 나이와 이름이 공백으로 구분되어 주어진다. 나이는 1보다 크거나 같으며, 200보다 작거나 같은 정수이고, 이름은 알파벳 대소문자로 이루어져 있고, 길이가 100보다 작거나 같은 문자열이다. 입력은 가입한 순서로 주어진다.
+
+출력
+첫째 줄부터 총 N개의 줄에 걸쳐 온라인 저지 회원을 나이 순, 나이가 같으면 가입한 순으로 한 줄에 한 명씩 나이와 이름을 공백으로 구분해 출력한다.
+
+※ stable sort와 unstable sort 에 대해 
+※ sort() 함수의 경우 최고 O(n) 시간복잡도를 갖고, stable함 
+※ https://velog.io/@1204jh/10814 
+
+"""
+# stable , unstable sort 개념이 안잡혀서 어려웠음 
+# 틀렸다함 
+# import sys
+
+# N = int(sys.stdin.readline())
+# array = [list(sys.stdin.readline().split()) for _ in range(N)]
+
+# array.sort(key=lambda x : (x[0]))
+
+# for i in array : 
+#     print(int(i[0]), i[1])
+
+# import sys 
+
+# array = [] 
+
+# for _ in range(int(sys.stdin.readline())):
+#     age, name = map(str, sys.stdin.readline().split())
+#     array.append((int(age), name)) # 넣을때 int를 해줘야 하는 구나 
+
+# array.sort(key = lambda x : x[0])
+
+# for i in array : 
+#     print(i[0], i[1])
+
+
+"""
+1181번 단어 정렬
+문제
+알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하시오.
+
+길이가 짧은 것부터
+길이가 같으면 사전 순으로
+입력
+첫째 줄에 단어의 개수 N이 주어진다. (1 ≤ N ≤ 20,000) 둘째 줄부터 N개의 줄에 걸쳐 알파벳 소문자로 이루어진 단어가 한 줄에 하나씩 주어진다. 주어지는 문자열의 길이는 50을 넘지 않는다.
+
+출력
+조건에 따라 정렬하여 단어들을 출력한다. 단, 같은 단어가 여러 번 입력된 경우에는 한 번씩만 출력한다.
+
+# 중복 제거 방법1 , 
+https://blockdmask.tistory.com/543
+
+## 정렬 방법 
+https://cocook.tistory.com/8
+
+"""
+# 찾아보고 직접 품 
+# import sys 
+
+# N = int(sys.stdin.readline())
+# array = [sys.stdin.readline().strip() for _ in range(N)]
+# result = [] # 중복 제거 리스트 
+
+# # set() 사용시 순서 보장 x , 딕셔너리 사용해도 중복 제거 가능
+# for i in array : 
+#     if i not in result : 
+#         result.append(i)
+
+# for i in sorted(result, key = lambda x : ( len(x), x) ): # 두번째 인자 위해 괄호만 하면 되는데..
+#     print(i)
+
+"""
+18870번 좌표 압축 --- 정렬 카테고리 문제인데.. 인덱스를 유추 못함..
+
+문제
+수직선 위에 N개의 좌표 X1, X2, ..., XN이 있다. 이 좌표에 좌표 압축을 적용하려고 한다.
+
+Xi를 좌표 압축한 결과 X'i의 값은 Xi > Xj를 만족하는 서로 다른 좌표의 개수와 같아야 한다.
+
+X1, X2, ..., XN에 좌표 압축을 적용한 결과 X'1, X'2, ..., X'N를 출력해보자.
+
+입력
+첫째 줄에 N이 주어진다.
+
+둘째 줄에는 공백 한 칸으로 구분된 X1, X2, ..., XN이 주어진다.
+
+출력
+첫째 줄에 X'1, X'2, ..., X'N을 공백 한 칸으로 구분해서 출력한다.
+
+## 힌트 
+https://gudwns1243.tistory.com/52
+
+dict 중복제거 
+https://blockdmask.tistory.com/543
+
+## 참고 
+list.index(i) 형태의 시간 복잡도 = O(N) >> 시간 초과 발생함 
+index[i] 형태의 시간 복잡도 = O(1)
+"""
+
+import sys
 N = int(sys.stdin.readline())
 
-# 최대값에 a의 최소값이 차례대로 맵핑되도록 {1, 1, 0, 1, 6} 으로 만들어야 함 
-a = list(map(int,sys.stdin.readline().split())) # 오름차순 정렬  
-b = list(map(int,sys.stdin.readline().split()))
-result = 0 
-for _ in range(N):
-    result += max(b) * min(a)
-    b.pop(b.index(max(b)))       # 너무 어렵게 생각했다.
-    a.pop(a.index(min(a)))
+array = list(map(int,sys.stdin.readline().split()))
+#uniq_arr = sorted(set(array))
 
-print(result)  
+# list.index(i) 사용시 시간복자도 O(N) 을 가짐 > 최대 1,000,000 수행되므로 시간초과 
+# for i in array : 
+#     print(uniq_arr.index(i), end=' ')
+# array.sort()
+# dict_array = list(dict.fromkeys(array))      # 중복제거 방법 
 
-#print(multiSum(4))
+array2 = sorted(list(set(array)))
+dict_arr = { array2[i] : i for i in range(len(array2))} # {-10: 0, -9: 1, 2: 2, 4: 3}
+
+for i in array:
+    print(dict_arr[i] , end = ' ')
+
+## 다른 사람 답변 
+
+N = input()
+ZIP = dict()
+X = list(map(int, input().split()))
+
+v = 0
+for k in sorted(X):
+    
+    if k not in ZIP.keys():
+        ZIP[k] = v
+        v += 1
+    
+print(' '.join(str(ZIP[x]) for x in X))

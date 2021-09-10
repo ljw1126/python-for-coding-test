@@ -51,27 +51,6 @@ n이 주어졌을 때, n번째 피보나치 수를 구하는 프로그램을 작
 
 # print(fibonacci[n])
 
-"""
-2447번 별찍기 - 10
-문제
-재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, ...)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다.
-
-크기 3의 패턴은 가운데에 공백이 있고, 가운데를 제외한 모든 칸에 별이 하나씩 있는 패턴이다.
-
-***
-* *
-***
-N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데의 (N/3)×(N/3) 정사각형을 크기 N/3의 패턴으로 둘러싼 형태이다. 예를 들어 크기 27의 패턴은 예제 출력 1과 같다.
-
-입력
-첫째 줄에 N이 주어진다. N은 3의 거듭제곱이다. 즉 어떤 정수 k에 대해 N=3k이며, 이때 1 ≤ k < 8이다.
-
-출력
-첫째 줄부터 N번째 줄까지 별을 출력한다. 
-"""
-
-
-
 
 """
 11729 번 하노이 탑 이동 순서 ------- 재귀와 print()로 구현
@@ -99,19 +78,62 @@ cnt 갯수 구할 때 ( 2**N -1 ) 하면 됨
 3 인 경우 7번 돌고 
 4 인 경우 15범 돔 
 """
-cnt = 0 
-array = []
+# cnt = 0 
+# array = []
 
-def hanoi(n, x, y):
-    global cnt 
-    cnt += 1
-    if n > 1 : hanoi(n-1, x, 6-x-y)
+# def hanoi(n, x, y):
+#     global cnt 
+#     cnt += 1
+#     if n > 1 : hanoi(n-1, x, 6-x-y)
 
-    array.append(list([x,y])) 
+#     array.append(list([x,y])) 
        
-    if n > 1 : hanoi(n-1, 6-x-y, y)
+#     if n > 1 : hanoi(n-1, 6-x-y, y)
     
-hanoi(int(input()),1,3)
-print(cnt)
-for i in array : 
-    print(f'{i[0]} {i[1]}')
+# hanoi(int(input()),1,3)
+# print(cnt)
+# for i in array : 
+#     print(f'{i[0]} {i[1]}')
+
+"""
+2447번 별찍기 - 10 ---------------------도저히 모르겠음 
+문제
+재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, ...)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다.
+
+크기 3의 패턴은 가운데에 공백이 있고, 가운데를 제외한 모든 칸에 별이 하나씩 있는 패턴이다.
+
+***
+* *
+***
+N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데의 (N/3)×(N/3) 정사각형을 크기 N/3의 패턴으로 둘러싼 형태이다. 예를 들어 크기 27의 패턴은 예제 출력 1과 같다.
+
+입력
+첫째 줄에 N이 주어진다. N은 3의 거듭제곱이다. 즉 어떤 정수 k에 대해 N=3k이며, 이때 1 ≤ k < 8이다.
+
+출력
+첫째 줄부터 N번째 줄까지 별을 출력한다. 
+
+# 참고 
+https://yeol2.tistory.com/38
+"""
+
+def stars(n):
+    matrix = []
+    for i in range ( 3 * len(n) ):
+        if i // len(n) == 1: 
+            matrix.append(n[i % len(n)] + " " * len(n) + n[i % len(n)])
+        else:
+            matrix.append(n[i%len(n)] * 3)
+    return list(matrix)
+
+star = ["***", "* *", "***"]
+N = int(input())
+k = 0 
+while N != 3 :
+    N = int(N / 3)
+    k += 1 
+
+for i in range(k): 
+    star = stars(star)
+for j in star : 
+    print(j)

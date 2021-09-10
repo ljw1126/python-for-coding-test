@@ -33,3 +33,13 @@ for i in range(10):
  # [2,3,1,4]
  ordered_nums = sorted(nums, reverse=True)
 ```
+
+### sort(), sorted()
+```
+https://velog.io/@aonee/Python-%EC%A0%95%EB%A0%AC-sort-sorted-reverse
+```
+
+### heapq 모듈  - 최소힙, 최대힙 // 힙 정렬에도 사용되는 , 최소 합 구하는 문제 활용가능 
+```
+ https://www.daleseo.com/python-heapq/
+```
